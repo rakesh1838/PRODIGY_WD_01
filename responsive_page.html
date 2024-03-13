@@ -1,0 +1,77 @@
+
+<!--######  TASK-1  ######-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <link rel="stylesheet" href="responsive_page.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <a class="logo" href="#">Logo</a>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div id="content">
+        <section class="section" id="home">
+            <h2>Welcome to Our Website</h2>
+            <p>We are dedicated to providing an exceptional online experience. Explore our interactive features and
+                discover a new level of user engagement.</p>
+        </section>
+
+        <section class="section" id="about">
+            <h2>About Us</h2>
+            <p>At our core, we believe in innovation and user-centric design. Learn more about our mission, vision, and
+                the passionate team driving our success.</p>
+        </section>
+
+        <section class="section" id="services">
+            <h2>Our Services</h2>
+            <p>Discover a range of services tailored to meet your needs. From web design and development to digital
+                marketing, we've got you covered with top-notch solutions.</p>
+        </section>
+
+        <section class="section" id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to discuss a project? Reach out to us! We're always here to assist you. Your
+                feedback is valuable to us, and we look forward to hearing from you.</p>
+        </section>
+
+
+        <p>By integrating these elements, an interactive navigation menu not only guides users effectively but also
+            elevates the overall user experience on a website or application.</p>
+    </div>
+    <script>
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.addEventListener('scroll', function () {
+            var navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = '#34495e';
+            } else {
+                navbar.style.backgroundColor = '#2c3e50';
+            }
+        });
+    </script>
+</body>
+
+</html>
